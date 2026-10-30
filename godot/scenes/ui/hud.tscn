@@ -1,0 +1,326 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Card"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(0.06, 0.06, 0.08, 0.82)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.35, 0.35, 0.4, 0.45)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 0.35)
+shadow_size = 6
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_CenterCard"]
+content_margin_left = 18.0
+content_margin_top = 6.0
+content_margin_right = 18.0
+content_margin_bottom = 6.0
+bg_color = Color(0.05, 0.05, 0.07, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.65, 0.5, 0.25, 0.5)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Pill"]
+content_margin_left = 18.0
+content_margin_top = 6.0
+content_margin_right = 18.0
+content_margin_bottom = 6.0
+bg_color = Color(0.06, 0.06, 0.08, 0.85)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.4, 0.45, 0.4)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.3)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_PowerBg"]
+bg_color = Color(0.08, 0.08, 0.1, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.4, 0.4, 0.45, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_PowerFill"]
+bg_color = Color(0.95, 0.35, 0.15, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Dialog"]
+content_margin_left = 28.0
+content_margin_top = 22.0
+content_margin_right = 28.0
+content_margin_bottom = 22.0
+bg_color = Color(0.07, 0.07, 0.09, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.68, 0.25, 0.7)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.6)
+shadow_size = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_Button"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.18, 0.18, 0.22, 0.9)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.45, 0.45, 0.5, 0.5)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hud")
+
+[node name="CardP1" type="PanelContainer" parent="."]
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 186.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="VBox" type="VBoxContainer" parent="CardP1"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="HBox" type="HBoxContainer" parent="CardP1/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CardP1/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.9, 0.92, 1)
+theme_override_font_sizes/font_size = 13
+text = "⚫ PLAYER 1"
+
+[node name="ScoreP1" type="Label" parent="CardP1/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 13
+text = "0 pts"
+horizontal_alignment = 2
+
+[node name="PiecesP1" type="Label" parent="CardP1/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.76, 1)
+theme_override_font_sizes/font_size = 11
+text = "9 pieces left"
+
+[node name="CardP2" type="PanelContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -186.0
+offset_top = 14.0
+offset_right = -16.0
+offset_bottom = 74.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Card")
+
+[node name="VBox" type="VBoxContainer" parent="CardP2"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="HBox" type="HBoxContainer" parent="CardP2/VBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="CardP2/VBox/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.95, 0.96, 1)
+theme_override_font_sizes/font_size = 13
+text = "⚪ PLAYER 2"
+
+[node name="ScoreP2" type="Label" parent="CardP2/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 13
+text = "0 pts"
+horizontal_alignment = 2
+
+[node name="PiecesP2" type="Label" parent="CardP2/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.72, 0.76, 1)
+theme_override_font_sizes/font_size = 11
+text = "9 pieces left"
+horizontal_alignment = 2
+
+[node name="CenterBadge" type="PanelContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 12.0
+offset_right = 150.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_CenterCard")
+
+[node name="VBox" type="VBoxContainer" parent="CenterBadge"]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="TurnLabel" type="Label" parent="CenterBadge/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.96, 0.94, 0.9, 1)
+theme_override_font_sizes/font_size = 14
+text = "PLAYER 1'S TURN (BLACK)"
+horizontal_alignment = 1
+
+[node name="QueenLabel" type="Label" parent="CenterBadge/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.22, 0.26, 1)
+theme_override_font_sizes/font_size = 12
+text = "👑 Queen: On Board"
+horizontal_alignment = 1
+
+[node name="PowerBar" type="ProgressBar" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -82.0
+offset_right = 140.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_PowerBg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_PowerFill")
+max_value = 100.0
+value = 0.0
+show_percentage = false
+visible = false
+
+[node name="StatePill" type="PanelContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -54.0
+offset_right = 210.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_Pill")
+
+[node name="StateLabel" type="Label" parent="StatePill"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.92, 0.94, 1)
+theme_override_font_sizes/font_size = 13
+text = "🎯 Place Striker — Click along baseline"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FoulLabel" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -118.0
+offset_right = 200.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.35, 0.25, 1)
+theme_override_font_sizes/font_size = 15
+text = "FOUL: Striker Pocketed!"
+horizontal_alignment = 1
+vertical_alignment = 1
+visible = false
+
+[node name="PlacementIndicator" type="ColorRect" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -3.0
+offset_right = 160.0
+offset_bottom = 0.0
+color = Color(0.85, 0.7, 0.2, 0.4)
+visible = false
+
+[node name="GameOverPanel" type="PanelContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_Dialog")
+visible = false
+
+[node name="VBox" type="VBoxContainer" parent="GameOverPanel"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="GameOverLabel" type="Label" parent="GameOverPanel/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.4, 1)
+theme_override_font_sizes/font_size = 22
+text = "🏆 Player 1 Wins!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameOverPanel/VBox"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_Button")
+text = "Play Again"
+
+[node name="MenuButton" type="Button" parent="GameOverPanel/VBox"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_Button")
+text = "Main Menu"

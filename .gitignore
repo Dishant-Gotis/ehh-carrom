@@ -1,0 +1,21 @@
+# Godot 4.x
+.godot/
+
+# Godot 3.x (legacy)
+.import/
+
+# Exported builds
+export/
+*.exe
+*.x86_64
+*.pck
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor
+*.swp
+*.swo
+*~
